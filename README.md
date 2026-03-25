@@ -20,8 +20,8 @@ A high-performance desktop companion built on the **ESP8266**. This project func
 ## 📸 Interface Preview
 | Dashboard Mode | Keyboard & IR Mode |
 | :--- | :--- |
-| ![Dashboard](images/dashboard.jpg) | ![Keyboard](images/keyboard.jpg) |
-| *Real-time Weather & NTP Clock* | *Naming a captured IR signal* |
+| ![Dashboard](images/dashboard.jpg) | ![IR Mode](images/ir_mode) | ![Keyboard](images/keyboard.jpg) |
+| *Real-time Weather & NTP Clock* | *Captured IR signal* | Naming a signal |
 
 ## 🔧 Installation & Setup
 1.  **Hardware:** Connect your TFT and IR modules as per the `circuit_diagram.png`.
