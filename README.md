@@ -27,6 +27,25 @@ A high-performance desktop companion built on the **ESP8266**. This project feat
     * Enter your WiFi credentials and OpenWeatherMap API Key.
 3.  **Calibration:** On first boot, the system triggers a touch calibration. Results are saved to `/touch.cal` in SPIFFS.
 
+## 🔌 Hardware Connections & Pinout
+
+This project uses a 2N2222A NPN transistor as a high-current switch to drive the IR LED for maximum range without damaging the ESP8266 GPIO pins.
+
+| Component | Pin Name | ESP8266 Pin | Notes |
+| :--- | :--- | :--- | :--- |
+| **TFT Display** | VCC / LED | **3V3** | Main Power (3.3V) |
+| | GND | **GND** | Common Ground |
+| | CS | **D8 (GPIO 15)** | Chip Select |
+| | DC / RS | **D3 (GPIO 0)** | Data/Command |
+| | SDI (MOSI) | **D7 (GPIO 13)** | SPI Data Out |
+| | SCK (CLK) | **D5 (GPIO 14)** | SPI Clock |
+| **IR Receiver** | Data Out | **D4 (GPIO 2)** | Signal Input |
+| | VCC / GND | **3V3 / GND** | Power Rails |
+| **IR Transmitter**| **Base** | **D1 (GPIO 5)** | **Signal Out (via 220Ω Resistor)** |
+| **(2N2222A)** | **Emitter** | **GND** | Transistor Ground |
+| | **Collector** | **IR LED (-)** | Connected to LED Cathode |
+| **IR LED** | Anode (+) | **3V3** | Connected to 3.3V Rail |
+
 ## 📄 License
 This project is licensed under the **MIT License**.
 
