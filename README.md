@@ -1,35 +1,34 @@
 # IoT Smart-Station & IR Command Center 🌦️📡
 
-A high-performance desktop companion built on the **ESP8266**. This project functions as a real-time weather station and an Intelligent Infrared (IR) Cloner with a custom-built Touch GUI.
+A high-performance desktop companion built on the **ESP8266**. This project features an intelligent context-switching system that toggles between network-heavy tasks (Weather/NTP) and timing-critical hardware tasks (IR Cloning).
 
-![Project Hero Image](images/dashboard.jpg)
+## 📸 Interface Preview
 
-## 🚀 Unique Features
-* **Context-Aware Resource Management:** The system intelligently deactivates the WiFi stack during IR capture. This eliminates CPU interrupts, ensuring microsecond precision for decoding IR protocols (NEC, Samsung, Sony).
-* **On-Screen HMI Keyboard:** A custom-coded QWERTY touch interface allows users to name captured IR signals directly on the device.
-* **Non-Volatile Storage (SPIFFS):** Captured signals and their custom names are saved to the ESP8266's internal Flash memory, ensuring data persists after power loss.
-* **Dynamic Weather Engine:** Fetches live data (Temp, Humidity, Conditions) from OpenWeatherMap API with NTP time synchronization.
+| 1. Dashboard Mode | 2. IR Control Mode | 3. Naming Signal |
+| :--- | :--- | :--- |
+| ![Dashboard](images/dashboard.jpg) | ![IR Mode](images/ir_mode.jpg) | ![Keyboard](images/keyboard.jpg) |
+| *Real-time Weather & NTP Clock* | *Cloning & hardware control* | *Custom HMI Touch Keyboard* |
+
+## 🚀 Key Features
+* **Context-Aware Resource Management:** The system deactivates the WiFi stack during IR capture to eliminate CPU interrupts, ensuring microsecond precision for decoding IR protocols (NEC, Samsung, Sony).
+* **On-Screen HMI Keyboard:** A custom-coded QWERTY touch interface allows for naming captured IR signals directly on the device.
+* **Non-Volatile Storage (SPIFFS):** Uses the ESP8266's internal Flash memory to store captured signals, ensuring data persists after a reboot.
+* **Dynamic Weather Engine:** Fetches live data (Temp, Humidity, Conditions) from OpenWeatherMap API with 10-minute refresh intervals and NTP time sync.
 
 ## 🛠️ Tech Stack
 - **Microcontroller:** ESP8266 (NodeMCU)
 - **Display:** 2.4" TFT LCD (ILI9341) using `TFT_eSPI`
 - **Peripherals:** IR Receiver (TSOP), IR Transmitter LED
-- **Communication:** REST API (JSON parsing via `ArduinoJson`), NTP
-- **File System:** SPIFFS (Serial Peripheral Interface Flash File System)
-
-## 📸 Interface Preview
-| Dashboard Mode | Keyboard & IR Mode |
-| :--- | :--- |
-| ![Dashboard](images/dashboard.jpg) | ![IR Mode](images/ir_mode) | ![Keyboard](images/keyboard.jpg) |
-| *Real-time Weather & NTP Clock* | *Captured IR signal* | Naming a signal |
+- **Logic:** REST API integration, JSON parsing, SPIFFS File Management.
 
 ## 🔧 Installation & Setup
-1.  **Hardware:** Connect your TFT and IR modules as per the `circuit_diagram.png`.
-2.  **Configuration:** Enter your WiFi SSID, Password, and OpenWeatherMap API Key.
-3.  **Calibration:** On first boot, the system will trigger a touch-screen calibration. Follow the on-screen crosses to save your settings to SPIFFS.
+1.  **Hardware:** Connect components as per the code's defined GPIO pins.
+2.  **Configuration:** * Rename `config.h.example` to `config.h`.
+    * Enter your WiFi credentials and OpenWeatherMap API Key.
+3.  **Calibration:** On first boot, the system triggers a touch calibration. Results are saved to `/touch.cal` in SPIFFS.
 
 ## 📄 License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
 
 ---
-**Developed by [Rithwik Nambiar](https://github.com/rithwik-nambiar)** *Aspiring Embedded Systems Engineer*
+**Developed by [Rithwik Nambiar](https://github.com/rithwik-nambiar)** *Aspiring Embedded Systems Engineer | Presidency University, Bangalore*
