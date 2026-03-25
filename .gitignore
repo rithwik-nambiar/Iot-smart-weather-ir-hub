@@ -1,0 +1,9 @@
+# Arduino IDE junk
+/build/
+/libraries/
+*.hex
+*.elf
+*.bin
+
+# Hardware specific
+.esp_cache/
