@@ -50,4 +50,4 @@ This project uses a 2N2222A NPN transistor as a high-current switch to drive the
 This project is licensed under the **MIT License**.
 
 ---
-**Developed by [Rithwik Nambiar](https://github.com/rithwik-nambiar)** *Aspiring Embedded Systems Engineer | Presidency University, Bangalore*
+**Developed by [Rithwik Nambiar](https://github.com/rithwik-nambiar)** *Aspiring Embedded Systems Engineer*
