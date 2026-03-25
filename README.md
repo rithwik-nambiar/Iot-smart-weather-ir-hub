@@ -1,4 +1,4 @@
-# IoT Smart-Station & IR Command Center 🌦️📡
+# ESP8266 Smart Weather Station & Universal IR Remote Hub 🌦️📡
 
 A high-performance desktop companion built on the **ESP8266**. This project features an intelligent context-switching system that toggles between network-heavy tasks (Weather/NTP) and timing-critical hardware tasks (IR Cloning).
 
